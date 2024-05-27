@@ -5,11 +5,11 @@
 ## Makefile
 ##
 
-SRC = add.asm
+SRC = sub.asm
 
-OBJECT = add.o
+OBJECT = sub.o
 
-NAME = add
+NAME = sub
 
 all: $(NAME)
 

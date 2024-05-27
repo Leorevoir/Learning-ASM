@@ -6,13 +6,16 @@
 ##
 
 SRC = atoi.asm
+
 OBJECT = atoi.o
+
 NAME = atoi
 
 all: $(NAME)
 
-$(OBJECT): $(SRC)
+$(OBJECT): $(SRC) macros.asm
 	@nasm -f elf32 $(SRC) -o $(OBJECT)
+	@printf "[\033[1;32mSUCCESS\033[0m] Assembled %s\n" $(OBJECT)
 
 $(NAME): $(OBJECT)
 	@ld -m elf_i386 -s -o $(NAME) $(OBJECT)

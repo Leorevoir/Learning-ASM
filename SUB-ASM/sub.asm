@@ -1,8 +1,8 @@
 ;;
 ;; EPITECH PROJECT, 2024
-;; ASM
+;; Learning-ASM
 ;; File description:
-;; my_add
+;; sub
 ;;
 
 %include "macros.asm"
@@ -12,7 +12,7 @@ section .data
     len1 equ $ - prompt1
     prompt2 db "Enter second number: ", 0
     len2 equ $ - prompt2
-    result_msg db "The sum is: ", 0
+    result_msg db "The difference is: ", 0
     len3 equ $ - result_msg
     newline db 0xa, 0
 
@@ -33,25 +33,25 @@ _start:
     syscall SYS_WRITE, STDOUT, prompt2, len2
     syscall SYS_READ, STDIN, input2, 2
 
-    mov eax, [input1]   ; store input1 in eax
-    sub eax, '0'        ; conveert it in integer
+    mov eax, [input1]   ; stock input1 in eax
+    sub eax, '0'        ; convert to int
 
-    mov ebx, [input2]   ; store input2 in ebx
-    sub ebx, '0'        ; convert it in integer
+    mov ebx, [input2]   ; stock input2 in ebx
+    sub ebx, '0'        ; convert to int
 
-    add eax, ebx        ; add eax and ebx
-    add eax, '0'        ; convert the result back to ASCII
+    sub eax, ebx        ; eax - ebx
 
-    ; store the result in res
-    mov [res], eax
+    add eax, '0'        ; convert result to ascii
 
-    ; print the result message
+    mov [res], eax      ; stock result in res
+
+    ; print result msg
     syscall SYS_WRITE, STDOUT, result_msg, len3
 
-    ; print the result
+    ; print result
     syscall SYS_WRITE, STDOUT, res, 1
 
-    ; print a newline
+    ; add \n
     syscall SYS_WRITE, STDOUT, newline, 1
 
     ; exit
