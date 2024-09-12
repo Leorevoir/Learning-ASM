@@ -35,11 +35,12 @@ build_object _strlen
 build_object _write
 build_object _print
 build_object _strcmp
+build_object _strcat
 
 _compile _strlen _strlen.o
 _compile _write _write.o
 _compile _print "_strlen.o _write.o _print.o"
 _compile _strcmp _strcmp.o
-
+_compile _strcat "_strcat.o _strlen.o"
 
 rm *.o && rm test_*
