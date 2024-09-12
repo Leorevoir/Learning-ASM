@@ -1,3 +1,7 @@
 *.o
 test_*
 !tests/*
+a.out
+test
+*.sh
+!build.sh

@@ -1,4 +1,10 @@
 #!/bin/bash
+##
+## EPITECH PROJECT, 2024
+## asm
+## File description:
+## build
+##
 
 function _error()
 {
@@ -19,18 +25,21 @@ function _compile()
 }
 
 
-function build_test()
+function build_object()
 {
     _display "BUILD" "Building $1..."
     nasm -f elf64 $1.asm -o $1.o || _error "nasm failed"
 }
 
-build_test _strlen
-build_test _write
-build_test _print
+build_object _strlen
+build_object _write
+build_object _print
+build_object _strcmp
 
 _compile _strlen _strlen.o
 _compile _write _write.o
 _compile _print "_strlen.o _write.o _print.o"
+_compile _strcmp _strcmp.o
+
 
 rm *.o && rm test_*
