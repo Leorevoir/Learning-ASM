@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 
-extern char *_strcat(char *__restrict__ dest, const char *__restrict__ *src);
+extern char *_strcat(char *__restrict__ dest, const char *__restrict__ src);
 
 
 int main(void)
