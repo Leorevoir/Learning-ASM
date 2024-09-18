@@ -5,3 +5,4 @@ a.out
 test
 *.sh
 !build.sh
+.vscode/
