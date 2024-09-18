@@ -15,8 +15,8 @@ _strcmp:
 
 
 loop:
-    mov al, [rdi]           ; save first str[i] in al
-    mov bl, [rsi]           ; save second str[i] in bl
+    movzx eax, byte [rdi]   ; load first str[i] in eax (zero-extended)
+    movzx ebx, byte [rsi]   ; load second str[i] in ebx (zero-extended)
     cmp al, bl              ; compare al with bl
     jne diff                ; if different, jump to diff
     test al, al             ; check for \0
@@ -27,8 +27,7 @@ loop:
 
 
 diff:
-    sub al, bl              ; s1[i] - s2[i]
-    movzx rax, al           ; result to the return value rax
+    sub eax, ebx            ; s1[i] - s2[i] (signed result)
     jmp restore             ; jump to restore
 
 
@@ -40,4 +39,3 @@ restore:
     pop rdi                 ; restore rdi
     pop rsi                 ; restore rsi
     ret                     ; returns :D
-
