@@ -11,6 +11,10 @@
 
 extern ssize_t _write(int fd, const void *buf, size_t count);
 
+/*
+ * as it is a basic write(1, &char, 1), i am too lazy to write a test
+ * for it so i just checked if it compiled with the right output and it did lmao
+ */
 int main(void)
 {
     const char *str = "Hello, World!\n";
