@@ -19,7 +19,7 @@ function _display()
 
 function _compile()
 {
-    gcc tests/test$1.c $2 -o test$1 > /dev/null 2>&1 || _error "gcc failed"
+    gcc -no-pie tests/test$1.c $2 -o test$1 > /dev/null 2>&1 || _error "gcc failed"
     ./test$1 > /dev/null || _error "test$1 failed"
     _display "TEST" "$1 passed!"
 }
@@ -37,6 +37,7 @@ build_object _print
 build_object _strcmp
 build_object _strcat
 build_object _strcpy
+build_object _atoi
 
 _compile _strlen _strlen.o
 _compile _write _write.o
@@ -44,5 +45,6 @@ _compile _print "_strlen.o _write.o _print.o"
 _compile _strcmp _strcmp.o
 _compile _strcat "_strcat.o _strlen.o"
 _compile _strcpy _strcpy.o
+_compile _atoi _atoi.o
 
 rm *.o && rm test_*
