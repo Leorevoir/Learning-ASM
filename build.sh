@@ -38,6 +38,7 @@ build_object _strcmp
 build_object _strcat
 build_object _strcpy
 build_object _atoi
+build_object _swap
 
 _compile _strlen _strlen.o
 _compile _write _write.o
@@ -46,5 +47,6 @@ _compile _strcmp _strcmp.o
 _compile _strcat "_strcat.o _strlen.o"
 _compile _strcpy _strcpy.o
 _compile _atoi _atoi.o
+_compile _swap _swap.o
 
 rm *.o && rm test_*
