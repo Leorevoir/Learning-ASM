@@ -20,7 +20,17 @@ cd Learning-ASM
 
 ## Usage
 
-To compile and execute the C tests, use the following script:
+To see build options, run:
+```bash
+./build.sh --help
+```
+
+To build all the tests, run:
 ```bash
 ./build.sh
+```
+
+To build all the tests with verbose output, run:
+```bash
+./build.sh --verbose
 ```
