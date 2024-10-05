@@ -5,18 +5,24 @@
 ** test_print
 */
 
+#include <unistd.h>
+#include <string.h>
 #include <stdio.h>
 
-extern void _print(const char *string);
+extern ssize_t _print(const char *string);
 
-/*
- * as it is a basic write(1, str, strlen(str)), i am too lazy to write a test
- * for it so i just checked if it compiled with the right output and it did lmao
- */
 int main(void)
 {
     const char *string = "Hello World!\n";
+    ssize_t result = _print(string);
+    ssize_t expected = write(1, string, strlen(string));
 
-    _print(string);
+    if (result != expected) {
+        fprintf(stderr, "Error:\n\t_print(\"%s\") returned %ld,\
+        but expected %ld\n", string, result, expected);
+        return 84;
+    }
+    printf("result: %ld\n", result);
+    printf("expected: %ld\n", expected);
     return 0;
 }

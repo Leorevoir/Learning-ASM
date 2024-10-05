@@ -23,6 +23,8 @@ returned %d but expected %d\n",
                 str1, str2, result, expected);
         return 0;
     }
+    printf("result: %d\n", result);
+    printf("expected: %d\n", expected);
     return 1;
 }
 
@@ -45,6 +47,8 @@ returned %d but expected %d\n", str1, str2, result, expected);
 returned %d but expected %d\n", str1, str2, result, expected);
         return 0;
     }
+    printf("result: %d\n", result);
+    printf("expected: %d\n", expected);
     return 1;
 }
 
@@ -60,6 +64,8 @@ static _Bool hard_test(void)
 returned %d but expected %d\n", str1, str2, result, expected);
         return 0;
     }
+    printf("result: %d\n", result);
+    printf("expected: %d\n", expected);
     return 1;
 }
 

@@ -11,20 +11,18 @@
 
 extern ssize_t _write(int fd, const void *buf, size_t count);
 
-/*
- * as it is a basic write(1, &char, 1), i am too lazy to write a test
- * for it so i just checked if it compiled with the right output and it did lmao
- */
 int main(void)
 {
     const char *str = "Hello, World!\n";
-    ssize_t real = write(1, str, strlen(str));
-    ssize_t custom = _write(1, str, strlen(str));
+    ssize_t result = write(1, str, strlen(str));
+    ssize_t expected = _write(1, str, strlen(str));
 
-    if (real != custom) {
+    if (result != expected) {
         fprintf(stderr, "[TEST]\tError:\n\twrite returned %ld, but _write returned %ld\n",
-            real, custom);
+            result, expected);
         return 84;
     }
+    printf("result: %ld\n", result);
+    printf("expected: %ld\n", expected);
     return 0;
 }

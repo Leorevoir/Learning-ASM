@@ -28,6 +28,9 @@ int main(void)
                 str, result, expected);
             return 84;
         }
+        printf("result: %d\n", result);
+        printf("expected: %d\n", expected);
     }
+
     return 0;
 }

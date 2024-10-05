@@ -22,6 +22,8 @@ static _Bool easy_test(void)
             dest, test);
         return 0;
     }
+    printf("result: %s\n", dest);
+    printf("expected: %s\n", test);
     return 1;
 }
 
@@ -37,6 +39,8 @@ static _Bool medium_test(void)
             dest, test);
         return 0;
     }
+    printf("result: %s\n", dest);
+    printf("expected: %s\n", test);
     return 1;
 }
 
@@ -52,6 +56,8 @@ static _Bool hard_test(void)
             dest, test);
         return 0;
     }
+    printf("result: %s\n", dest);
+    printf("expected: %s\n", test);
     return 1;
 }
 

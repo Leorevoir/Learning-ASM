@@ -13,14 +13,15 @@ _strcpy:
     mov rbp, rsp
     push rdi
 
-.loop:
+loop:
     mov al, [rsi]
     mov [rdi], al
     inc rsi
     inc rdi
     test al, al
-    jnz .loop
+    jnz loop
 
-    pop rax
-    leave
+    pop rdi
+    mov rsp, rbp
+    pop rbp
     ret

@@ -21,6 +21,8 @@ static _Bool easy_test(void)
 \"%s\") returned %d but expected 0\n", str1, str2, result);
         return 0;
     }
+    printf("result: %d\n", result);
+    printf("expected: %d\n", result);
     return 1;
 }
 
@@ -35,6 +37,8 @@ static _Bool medium_test(void)
 \"%s\") returned %d but expected a negative value\n", str1, str2, result);
         return 0;
     }
+    printf("result: %d\n", result);
+    printf("expected: %d\n", result);
     return 1;
 }
 
@@ -49,6 +53,8 @@ static _Bool hard_test(void)
 \"%s\") returned %d but expected a positive value\n", str1, str2, result);
         return 0;
     }
+    printf("result: %d\n", result);
+    printf("expected: %d\n", result);
     return 1;
 }
 

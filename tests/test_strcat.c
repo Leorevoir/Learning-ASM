@@ -25,6 +25,8 @@ static _Bool easy_test(void)
             dest, test);
         return 0;
     }
+    printf("result: %s\n", dest);
+    printf("expected: %s\n", test);
     return 1;
 }
 
@@ -42,6 +44,8 @@ static _Bool medium_test(void)
 \"\") returned %s but expected %s\n", dest, test);
         return 0;
     }
+    printf("result: %s\n", dest);
+    printf("expected: %s\n", test);
     strcpy(dest, "");
     strcpy(test, "");
     _strcat(dest, "Hello");
@@ -51,6 +55,8 @@ static _Bool medium_test(void)
 \"Hello\") returned %s but expected %s\n", dest, test);
         return 0;
     }
+    printf("result: %s\n", dest);
+    printf("expected: %s\n", test);
     return 1;
 }
 
@@ -68,6 +74,8 @@ static _Bool hard_test(void)
 \"abcdefghij\") returned %s but expected %s\n", dest, test);
         return 0;
     }
+    printf("result: %s\n", dest);
+    printf("expected: %s\n", test);
     return 1;
 }
 

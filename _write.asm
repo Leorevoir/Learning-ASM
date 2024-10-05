@@ -12,4 +12,3 @@ _write:
     mov rax, 1              ; syscall for write x86-64
     syscall                 ; call kernel
     ret                     ; return
-

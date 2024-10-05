@@ -18,4 +18,3 @@ _print:
     mov rdx, rax            ; save rax (strlen) in rdx before _write syscall
     call _write             ; syscall _write
     ret                     ; return ! :D
-
