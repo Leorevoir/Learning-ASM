@@ -7,9 +7,28 @@
 ### Prerequisites
 
 Install an assembler for the Inter x86 architecture (for this project I used nasm)
+
+### Ubuntu and Debian-based distributions (Pop!_OS, Mint...)
 ```bash
 sudo apt install nasm
 ```
+### Fedora
+```bash
+sudo dnf install nasm
+```
+### Arch Linux
+```bash
+sudo pacman -S nasm
+```
+### openSUSE
+```bash
+sudo zypper install nasm
+```
+### Alpine Linux
+```bash
+apk add nasm
+```
+
 
 ### Clone the Repository
 
