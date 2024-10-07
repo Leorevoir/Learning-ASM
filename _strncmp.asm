@@ -1,3 +1,10 @@
+;;
+;; EPITECH PROJECT, 2024
+;; Learning-ASM
+;; File description:
+;; _strncmp
+;;
+
 section .text
     global _strncmp
 
