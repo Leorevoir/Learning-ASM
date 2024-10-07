@@ -8,6 +8,7 @@
 section .text
     global _strncmp
 
+
 _strncmp:
     push rdi                ; save first string address
     push rsi                ; save second string address
