@@ -1,0 +1,20 @@
+name: Test Learning-ASM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          sudo apt install nasm
+          sudo apt install gcc
+      - name: Run build.sh
+        run: |
+          bash build.sh
